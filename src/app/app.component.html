@@ -1,1 +1,4 @@
-<app-blog></app-blog>
+<app-blog
+  [misNoticias]="noticias"
+  (noticiaEmitida)="capturarNoticia($event)"
+></app-blog>

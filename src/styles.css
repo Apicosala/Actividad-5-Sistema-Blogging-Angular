@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+.noticia {
+  display: flex;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.noticia__img {
+  width: 50%;
+  height: auto;
+  }
+
+.noticia__text {
+  flex-direction: column;
+  padding: 10px;
+
+}

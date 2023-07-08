@@ -1,48 +1,62 @@
-<h1>Actividad: Sistema Blogging en Angular</h1>
-<hr />
-<h2>Formulario</h2>
-<div class="form">
-  <div>
-    <label class="etiquetas" for="title">Título</label>
-    <input
-      class="input__blog"
-      type="text"
-      id="title"
-      placeholder=" inserte el título"
-    />
-  </div>
-  <div>
-    <label class="etiquetas" for="img">Imagen</label>
-    <input
-      class="input__blog"
-      type="text"
-      id="img"
-      placeholder=" inserte la url de la imagen"
-    />
-  </div>
-  <div>
-    <label class="etiquetas" for="description">Texto de la noticia</label>
-    <textarea
-      class="input__blog"
-      id="description"
-      placeholder=" inserte el texto de la noticia"
-    ></textarea>
-  </div>
-  <div>
-    <label class="etiquetas" for="date">fecha publicación</label>
-    <input
-      class="input__blog"
-      type="date"
-      id="date"
-      placeholder="inserte la fecha de publicación"
-    />
-  </div>
-  <div class="btn__blog">
-    <button>Enviar</button>
-  </div>
-</div>
-<hr />
-<h2>Listado de noticias</h2>
-<section>
-  <ul></ul>
-</section>
+<header class="cabecera__noticia">
+  <h1>Actividad: Sistema Blogging en Angular</h1>
+</header>
+<main>
+  <article class="container__noticia">
+    <div class="formulario__noticia">
+      <h2>Formulario</h2>
+      <div class="form">
+        <div>
+          <label class="etiquetas" for="title">Título</label>
+          <input
+            class="input__blog"
+            type="text"
+            id="title"
+            placeholder=" inserte el título"
+            [(ngModel)]="newNoticia.title"
+          />
+        </div>
+        <div>
+          <label class="etiquetas" for="img">Imagen</label>
+          <input
+            class="input__blog"
+            type="text"
+            id="img"
+            placeholder=" inserte la url de la imagen"
+            [(ngModel)]="newNoticia.img"
+          />
+        </div>
+        <div>
+          <label class="etiquetas" for="description">Texto de la noticia</label>
+          <textarea
+            class="input__blog"
+            type="text"
+            id="description"
+            placeholder=" inserte el texto de la noticia"
+            [(ngModel)]="newNoticia.description"
+          ></textarea>
+        </div>
+        <div>
+          <label class="etiquetas" for="date">fecha publicación</label>
+          <input
+            class="input__blog"
+            type="date"
+            id="date"
+            placeholder="inserte la fecha de publicación"
+            [(ngModel)]="newNoticia.date"
+          />
+        </div>
+        <div class="btn__blog">
+          <button (click)="capturarNoticia()">Guardar</button>
+        </div>
+      </div>
+    </div>
+    <div class="listado">
+      <h2>Listado de noticias</h2>
+      <section
+        class="noticia__listado"
+        [innerHTML]="cargarNoticias()"
+      ></section>
+    </div>
+  </article>
+</main>
